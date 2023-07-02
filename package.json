@@ -21,6 +21,7 @@
     "jsonwebtoken": "^9.0.0",
     "mongo-sanitize": "^1.1.0",
     "mongoose": "^7.3.1",
+    "xss": "^1.0.14",
     "xss-clean": "^0.1.4"
   }
 }

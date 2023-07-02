@@ -15,6 +15,7 @@ express-mongo-sanitize > npm i express-mongo-sanitize
 Express Rate Limit > npm i express-rate-limit
 Helmet > npm i helmet
 HPP > npm i hpp
+xss >npm install xss
 xss-clean > npm install xss-clean --save
 mongo-sanitize > npm i mongo-sanitize
 jwt token > npm install jsonwebtoken
