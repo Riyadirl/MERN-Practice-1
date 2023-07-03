@@ -1,0 +1,79 @@
+
+/*login
+exports.UserLogin = (req, res) => {
+    let userName = req.body['userName'];
+    let password = req.body['password'];
+
+    ProfileModel.find({ userName, password }, (err, data) => {
+        if (err) {
+            res.status(400).json({ status: 'fail', data: err });
+        } else {
+            if (data.length) {
+                // Create authentication token
+                const payload = { exp: Math.floor(Date.now() / 1000) + (24 * 60 * 60), data: data[0] };
+                const token = jwt.sign(payload, 'key1234');
+
+                res.status(200).json({ status: 'success', data: { token } });
+            } else {
+                res.status(401).json({ status: 'unauthorized' });
+            }
+        }
+    });
+};
+
+login
+
+exports.UserLogin = (req, res) => {
+    let userName = req.body['userName'];
+    let password = req.body['password'];
+
+    ProfileModel.find({ userName: userName, password: password }, (err, data) => {
+        if (err) {
+            res.status(400).json({ status: 'fail', data: err });
+        }
+        else {
+            if (data.length) {
+                //create auth
+                let payload = { exp: Math.floor(Date.now() / 1000) + (24 * 60 * 60), data: data[0] }
+                let token = jwt.sign(payload, 'key1234');
+
+                res.status(200).json({ status: 'success', data: data });
+            }
+            else {
+                res.status(401).json({ status: 'unautjorized' });
+            }
+        }
+
+
+    })
+}
+
+
+login
+
+exports.UserLogin = async (req, res) => {
+    try {
+        const { userName, password } = req.body;
+        const profile = await ProfileModel.findOne({ userName, password });
+
+        if (profile) {
+
+            //create wuth token
+            const secretKey = 'secret-key';
+
+            const token = jwt.sign({ userName: profile.userName }, secretKey, {
+                expiresIn: '1h' // Token expiration time
+            });
+
+            // Profile found, login successful
+            res.status(200).json({ message: 'Login successful', data: profile });
+        } else {
+            // Profile not found or invalid credentials, login failed
+            res.status(401).json({ error: 'Invalid credentials' });
+        }
+    } catch (error) {
+        console.error('Error during login:', error);
+        res.status(500).json({ error: 'Failed to login' });
+    }
+};
+*/
