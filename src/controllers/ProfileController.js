@@ -45,4 +45,48 @@ exports.UserLogin = async (req, res) => {
 
 
 
+// read user
 
+
+exports.selectProfile = (req, res) => {
+    const userName = req.userName;
+
+    if (!userName) {
+        return res.status(400).json({ status: 'fail', data: 'userName is missing' });
+    }
+
+    // Proceed with your logic after obtaining the userName value
+    // ...
+
+    res.status(200).json({ status: 'success', data: { userName } });
+};
+
+/*
+exports.selectProfile = (req, res) => {
+
+    let userName = "alex254"
+
+    if (err) {
+        res.status(400).json({ status: "fail", data: err });
+    }
+    else {
+        res.status(200).json({ status: "success", data: data });
+    }
+}
+
+
+exports.selectProfile = (req, res) => {
+    let userName = req.headers['userName'];
+
+    // Assuming you have a way to retrieve the userName value, replace "" with the appropriate value
+    if (!userName) {
+        res.status(400).json({ status: "fail", data: "userName is missing." });
+        return; // Return to avoid executing the else block
+    }
+
+    // Proceed with your logic after obtaining the userName value
+    // ...
+
+    res.status(200).json({ status: "success", data: { userName } });
+};
+*/
